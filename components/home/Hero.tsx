@@ -30,7 +30,7 @@ const Hero = () => {
             </Button>
           </Link>
 
-          <Link title="Facebook" href="https://www.facebook.com/ChanquinaFm104.1" target="_blank">
+          <Link title="Facebook" href="https://www.facebook.com/profile.php?id=100090362018458" target="_blank">
             <Button className="bg-[#1877F2] text-white hover:bg-[#0d63d4] transition-all">
               <Facebook className="w-4 h-4 mr-2" /> Facebook
             </Button>

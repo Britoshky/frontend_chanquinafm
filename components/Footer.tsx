@@ -37,7 +37,7 @@ const Footer = () => {
               <Mail className="w-4 h-4" /> <span>administrador@chanquinafm.cl</span>
             </li>
             <li className="flex items-center gap-3 mt-3">
-              <Link title='Página de Facebook' href="https://www.facebook.com/ChanquinaFm104.1" target="_blank" aria-label="Facebook" className="hover:text-[#00D1FF]">
+              <Link title='Página de Facebook' href="https://www.facebook.com/profile.php?id=100090362018458" target="_blank" aria-label="Facebook" className="hover:text-[#00D1FF]">
                 <Facebook className="w-5 h-5" />
               </Link>
               <Link title='Cuenta de instagram' href="https://www.instagram.com/radiochanquina" target="_blank" aria-label="Instagram" className="hover:text-[#feda75]">
