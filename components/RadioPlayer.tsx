@@ -1,15 +1,15 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import ReactHowler from 'react-howler'
-import { Play, Pause, Volume2, VolumeX } from 'lucide-react'
+import React, { useState } from "react";
+import ReactHowler from "react-howler";
+import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 
 const RadioPlayer = () => {
-  const [playing, setPlaying] = useState(false)
-  const [muted, setMuted] = useState(false)
+  const [playing, setPlaying] = useState(false);
+  const [muted, setMuted] = useState(false);
 
-  const togglePlay = () => setPlaying(!playing)
-  const toggleMute = () => setMuted(!muted)
+  const togglePlay = () => setPlaying(!playing);
+  const toggleMute = () => setMuted(!muted);
 
   return (
     <section
@@ -17,8 +17,8 @@ const RadioPlayer = () => {
       aria-label="Reproductor de radio en línea de Chanquina FM"
     >
       {/* Motor de audio sin UI */}
-        <ReactHowler
-          src="https://stream.cloudmusic.cl:8000"
+      <ReactHowler
+        src="https://stream.cloudmusic.cl/listen/radio_chanquina/radio.mp3"
         playing={playing}
         mute={muted}
         html5
@@ -30,7 +30,10 @@ const RadioPlayer = () => {
       </h2>
 
       {/* Onda animada decorativa */}
-      <div className="flex justify-center items-end gap-[4px] h-6 mt-4 mb-4" aria-hidden="true">
+      <div
+        className="flex justify-center items-end gap-[4px] h-6 mt-4 mb-4"
+        aria-hidden="true"
+      >
         <div className="w-[4px] h-3 bg-[#5B1FA6] animate-wave delay-[0ms]" />
         <div className="w-[4px] h-5 bg-[#00D1FF] animate-wave delay-[100ms]" />
         <div className="w-[4px] h-4 bg-[#5B1FA6] animate-wave delay-[200ms]" />
@@ -48,17 +51,27 @@ const RadioPlayer = () => {
         <button
           onClick={togglePlay}
           className="bg-[#5B1FA6] hover:bg-[#00D1FF] text-white p-4 rounded-full shadow-md transition-all"
-          aria-label={playing ? 'Pausar transmisión' : 'Reproducir transmisión en vivo'}
+          aria-label={
+            playing ? "Pausar transmisión" : "Reproducir transmisión en vivo"
+          }
         >
-          {playing ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+          {playing ? (
+            <Pause className="w-5 h-5" />
+          ) : (
+            <Play className="w-5 h-5" />
+          )}
         </button>
 
         <button
           onClick={toggleMute}
           className="border border-[#5B1FA6] text-[#5B1FA6] hover:border-[#00D1FF] hover:text-[#00D1FF] p-4 rounded-full shadow-sm transition-all"
-          aria-label={muted ? 'Activar sonido' : 'Silenciar audio'}
+          aria-label={muted ? "Activar sonido" : "Silenciar audio"}
         >
-          {muted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+          {muted ? (
+            <VolumeX className="w-5 h-5" />
+          ) : (
+            <Volume2 className="w-5 h-5" />
+          )}
         </button>
       </div>
 
@@ -75,7 +88,7 @@ const RadioPlayer = () => {
         En Vivo – 104.1 FM desde Chanco
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default RadioPlayer
+export default RadioPlayer;
