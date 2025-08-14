@@ -17,8 +17,8 @@ const RadioPlayer = () => {
       aria-label="Reproductor de radio en línea de Chanquina FM"
     >
       {/* Motor de audio sin UI */}
-      <ReactHowler
-        src="https://stream.chanquinafm.cl/chanquina"
+        <ReactHowler
+          src="https://stream.cloudmusic.cl:8000"
         playing={playing}
         mute={muted}
         html5
