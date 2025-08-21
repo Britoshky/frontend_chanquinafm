@@ -13,18 +13,20 @@ const precios = {
 
 export default function CotizadorServel() {
   const [segundos, setSegundos] = useState(15);
-  const [cantidad, setCantidad] = useState(1);
-  const [dias, setDias] = useState(1);
+  const [cantidad, setCantidad] = useState('1');
+  const [dias, setDias] = useState('1');
   const [tipo, setTipo] = useState("aviso");
 
+  const cantidadNum = parseInt(cantidad) || 0;
+  const diasNum = parseInt(dias) || 0;
   let total = 0;
   if (tipo === "aviso") {
     const key = String(segundos) as keyof typeof precios;
-    total = precios[key] * cantidad * dias;
+    total = precios[key] * cantidadNum * diasNum;
   } else if (tipo === "entrevista15") {
-    total = precios.entrevista15 * cantidad * dias;
+    total = precios.entrevista15 * cantidadNum * diasNum;
   } else if (tipo === "entrevista30") {
-    total = precios.entrevista30 * cantidad * dias;
+    total = precios.entrevista30 * cantidadNum * diasNum;
   }
 
   return (
@@ -94,10 +96,15 @@ export default function CotizadorServel() {
                   Cantidad por día
                 </label>
                 <input
-                  type="number"
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   min={1}
-                  value={cantidad}
-                  onChange={(e) => setCantidad(Number(e.target.value))}
+                  value={cantidad === '0' ? '' : cantidad}
+                  onChange={e => {
+                    const val = e.target.value.replace(/^0+(?!$)/, '');
+                    setCantidad(val === '' ? '' : val);
+                  }}
                   className="w-full border-2 border-[#B39DDB] rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#6A1B9A]"
                 />
               </div>
@@ -106,10 +113,15 @@ export default function CotizadorServel() {
                   Cantidad de días
                 </label>
                 <input
-                  type="number"
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   min={1}
-                  value={dias}
-                  onChange={(e) => setDias(Number(e.target.value))}
+                  value={dias === '0' ? '' : dias}
+                  onChange={e => {
+                    const val = e.target.value.replace(/^0+(?!$)/, '');
+                    setDias(val === '' ? '' : val);
+                  }}
                   className="w-full border-2 border-[#B39DDB] rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#6A1B9A]"
                 />
               </div>
