@@ -36,6 +36,8 @@ const Navbar = () => {
             <li><Link href="/contacto" title='Contacto' className="hover:text-[#00D1FF] transition-colors">Contacto</Link></li>
             <li><Link href="/politicas" title='Politicas' className="hover:text-[#00D1FF] transition-colors">Privacidad</Link></li>
             <li><Link href="/condiciones" title='Condiciones' className="hover:text-[#00D1FF] transition-colors">Condiciones</Link></li>
+              <li><a href="https://tarifas.servel.cl/visualizar/cf957f730049f3ee5390ee38ec012576bb4f20d8" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D1FF] transition-colors">Precios Servel</a></li>
+              <li><Link href="/cotizar-servel" title='Cotizar Servel' className="hover:text-[#00D1FF] transition-colors">Cotizar Servel</Link></li>
           </ul>
         </nav>
 
@@ -58,6 +60,8 @@ const Navbar = () => {
             <li><Link href="/contacto" title='Contacto' className="block py-2 px-3 hover:bg-[#6C2BD1] rounded">Contacto</Link></li>
             <li><Link href="/politicas" title='Politicas' className="block py-2 px-3 hover:bg-[#6C2BD1] rounded">Privacidad</Link></li>
             <li><Link href="/condiciones" title='Condiciones' className="block py-2 px-3 hover:bg-[#6C2BD1] rounded">Condiciones</Link></li>
+              <li><a href="https://tarifas.servel.cl/visualizar/cf957f730049f3ee5390ee38ec012576bb4f20d8" target="_blank" rel="noopener noreferrer" className="block py-2 px-3 hover:bg-[#6C2BD1] rounded">Precios</a></li>
+              <li><Link href="/cotizar-servel" title='Cotizar Servel' className="block py-2 px-3 hover:bg-[#6C2BD1] rounded">Cotizar Servel</Link></li>
           </ul>
         </nav>
       )}
