@@ -13,12 +13,12 @@ const precios = {
 
 export default function CotizadorServel() {
   const [segundos, setSegundos] = useState(15);
-  const [cantidad, setCantidad] = useState('1');
-  const [dias, setDias] = useState('1');
+  const [cantidad, setCantidad] = useState('');
+  const [dias, setDias] = useState('');
   const [tipo, setTipo] = useState("aviso");
 
-  const cantidadNum = parseInt(cantidad) || 0;
-  const diasNum = parseInt(dias) || 0;
+  const cantidadNum = cantidad === '' ? 0 : parseInt(cantidad);
+  const diasNum = dias === '' ? 0 : parseInt(dias);
   let total = 0;
   if (tipo === "aviso") {
     const key = String(segundos) as keyof typeof precios;
@@ -100,10 +100,10 @@ export default function CotizadorServel() {
                   inputMode="numeric"
                   pattern="[0-9]*"
                   min={1}
-                  value={cantidad === '0' ? '' : cantidad}
+                  value={cantidad}
                   onChange={e => {
-                    const val = e.target.value.replace(/^0+(?!$)/, '');
-                    setCantidad(val === '' ? '' : val);
+                    const val = e.target.value.replace(/[^0-9]/g, '');
+                    setCantidad(val);
                   }}
                   className="w-full border-2 border-[#B39DDB] rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#6A1B9A]"
                 />
@@ -117,10 +117,10 @@ export default function CotizadorServel() {
                   inputMode="numeric"
                   pattern="[0-9]*"
                   min={1}
-                  value={dias === '0' ? '' : dias}
+                  value={dias}
                   onChange={e => {
-                    const val = e.target.value.replace(/^0+(?!$)/, '');
-                    setDias(val === '' ? '' : val);
+                    const val = e.target.value.replace(/[^0-9]/g, '');
+                    setDias(val);
                   }}
                   className="w-full border-2 border-[#B39DDB] rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#6A1B9A]"
                 />
