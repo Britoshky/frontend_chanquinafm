@@ -4,6 +4,10 @@ import React, { useState } from "react";
 import ReactHowler from "react-howler";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 
+const STREAM_URL =
+  process.env.NEXT_PUBLIC_STREAM_URL ||
+  "https://sonic.nnw.cl/8034/stream";
+
 const RadioPlayer = () => {
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
@@ -18,7 +22,7 @@ const RadioPlayer = () => {
     >
       {/* Motor de audio sin UI */}
       <ReactHowler
-        src="https://stream.cloudmusic.cl/listen/radio_chanquina/radio.mp3"
+        src={STREAM_URL}
         playing={playing}
         mute={muted}
         html5
