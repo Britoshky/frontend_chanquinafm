@@ -90,7 +90,7 @@ const RadioPlayer = () => {
       />
 
       <h2 className="sr-only">
-        Escucha en vivo la señal de Chanquina FM 104.1 desde Chanco
+        Escucha en vivo Chanquina FM 104.1 — Una radio para la gente de Chanco
       </h2>
 
       <div
@@ -174,7 +174,7 @@ const RadioPlayer = () => {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
         </span>
-        En Vivo – 104.1 FM desde Chanco
+        En Vivo – Decibeles de energía
       </div>
     </section>
   );

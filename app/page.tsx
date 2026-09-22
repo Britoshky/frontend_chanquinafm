@@ -9,9 +9,9 @@ import type { Metadata } from "next";
 
 // SEO metadata
 export const metadata: Metadata = {
-  title: "Radio Chanquina FM 104.1 | Desde Chanco al Mundo",
+  title: "Radio Chanquina FM 104.1 | Una radio para la gente de Chanco",
   description:
-    "Radio Chanquina FM 104.1 transmite desde Chanco con música, noticias y cultura local. Escúchanos en vivo y entérate de la programación destacada.",
+    "Chanquina FM 104.1: una radio para la gente de Chanco. Decibeles de energía con música, noticias y cultura local. Escúchanos en vivo.",
   keywords: [
     "Radio Chanquina",
     "Chanquina FM",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   creator: "Radio Chanquina",
   publisher: "Radio Chanquina FM",
   openGraph: {
-    title: "Radio Chanquina FM 104.1 | Escúchanos en Vivo",
+    title: "Radio Chanquina FM 104.1 | Decibeles de energía",
     description:
-      "Escucha en vivo Radio Chanquina FM 104.1 desde Chanco. Noticias, música, cultura y programas en directo desde la Región del Maule.",
+      "Una radio para la gente de Chanco. Escucha en vivo Chanquina FM 104.1: noticias, música y cultura desde la Región del Maule.",
     url: "https://www.chanquinafm.cl",
     siteName: "Radio Chanquina FM",
     images: [
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Radio Chanquina FM 104.1",
+    title: "Radio Chanquina FM 104.1 | Decibeles de energía",
     description:
-      "Sintoniza la 104.1 FM y entérate de lo que pasa en Chanco y la Región del Maule.",
+      "Una radio para la gente de Chanco. Sintoniza la 104.1 FM en vivo.",
     images: ["https://www.chanquinafm.cl/logo.png"],
   },
   robots: {

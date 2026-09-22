@@ -24,7 +24,7 @@ const Navbar = () => {
           </div>
           <div className="leading-tight">
             <p className="text-xl font-bold">Chanquina FM</p>
-            <p className="text-sm text-[#00D1FF] font-light">104.1 FM - Chanco</p>
+            <p className="text-sm text-[#00D1FF] font-light">Decibeles de energía</p>
           </div>
         </Link>
 

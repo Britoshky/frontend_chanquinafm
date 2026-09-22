@@ -11,13 +11,19 @@ const Hero = () => {
       aria-label="Bienvenida a Radio Chanquina"
     >
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
-          Tu voz. Nuestra radio. <br className="hidden md:block" />
-          Desde <span className="text-[#00D1FF]">Chanco</span> al mundo.
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+          Una radio para la gente de{" "}
+          <span className="text-[#00D1FF]">Chanco</span>
         </h1>
+        <p className="text-xl md:text-2xl font-semibold text-[#00D1FF] mb-6 tracking-wide">
+          Decibeles de energía
+        </p>
 
         <p className="text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto">
-          Noticias, cultura y música en la 104.1 FM – <span className="italic">Radio Chanquina</span>. Conectamos a la comunidad de la Región del Maule con información confiable, identidad local y sonidos que acompañan tu día.
+          Noticias, cultura y música en la 104.1 FM –{" "}
+          <span className="italic">Radio Chanquina</span>. Conectamos a la
+          comunidad de la Región del Maule con información confiable, identidad
+          local y sonidos que acompañan tu día.
         </p>
 
         <div
@@ -48,7 +54,7 @@ const Hero = () => {
         </div>
 
         <p className="text-sm text-white/70 mt-6">
-          Sintonízanos en el 104.1 FM 📻 – Estamos contigo, donde estés.
+          Sintonízanos en el 104.1 FM – Decibeles de energía, donde estés.
         </p>
       </div>
     </section>
