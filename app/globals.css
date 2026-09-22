@@ -130,3 +130,42 @@
   animation: wave 1s infinite ease-in-out;
   transform-origin: bottom;
 }
+
+/* Slider de volumen Chanquina FM */
+.chanquina-volume {
+  height: 1.25rem;
+}
+.chanquina-volume::-webkit-slider-runnable-track {
+  height: 0.375rem;
+  background: transparent;
+  border-radius: 999px;
+}
+.chanquina-volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -0.3125rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999px;
+  border: 2px solid #5B1FA6;
+  background: #00D1FF;
+  box-shadow: 0 0 0 3px rgba(91, 31, 166, 0.18);
+  transition: transform 0.15s ease;
+}
+.chanquina-volume:hover::-webkit-slider-thumb,
+.chanquina-volume:focus-visible::-webkit-slider-thumb {
+  transform: scale(1.08);
+}
+.chanquina-volume::-moz-range-track {
+  height: 0.375rem;
+  background: transparent;
+  border-radius: 999px;
+}
+.chanquina-volume::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999px;
+  border: 2px solid #5B1FA6;
+  background: #00D1FF;
+  box-shadow: 0 0 0 3px rgba(91, 31, 166, 0.18);
+}
