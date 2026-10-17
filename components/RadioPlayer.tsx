@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import ReactHowler from "react-howler";
 import { Play, Pause, Volume1, Volume2, VolumeX } from "lucide-react";
+import { VolumeSlider } from "@/components/VolumeSlider";
 
 const STREAM_URL =
   process.env.NEXT_PUBLIC_STREAM_URL ||
@@ -54,7 +55,7 @@ const RadioPlayer = () => {
 
   const togglePlay = () => setPlaying((current) => !current);
 
-  const onVolumeInput = (next: number) => {
+  const onVolumeInput = useCallback((next: number) => {
     const clamped = Math.min(1, Math.max(0, next));
     setVolume(clamped);
     if (clamped > 0) {
@@ -63,7 +64,7 @@ const RadioPlayer = () => {
     } else {
       setMuted(true);
     }
-  };
+  }, []);
 
   const toggleMute = () => {
     if (muted || volume === 0) {
@@ -84,8 +85,8 @@ const RadioPlayer = () => {
       <ReactHowler
         src={STREAM_URL}
         playing={playing}
-        mute={muted}
-        volume={effectiveVolume}
+        mute={muted || volume === 0}
+        volume={volume}
         html5
       />
 
@@ -139,26 +140,13 @@ const RadioPlayer = () => {
           <VolumeIcon className="w-5 h-5" />
         </button>
 
-        <div className="relative flex min-w-0 flex-1 items-center">
-          <div className="pointer-events-none absolute inset-x-0 h-1.5 rounded-full bg-[#5B1FA6]/15" />
-          <div
-            className="pointer-events-none absolute left-0 h-1.5 rounded-full bg-gradient-to-r from-[#5B1FA6] to-[#00D1FF]"
-            style={{ width: `${Math.round(effectiveVolume * 100)}%` }}
-          />
-          <input
-            type="range"
-            min={0}
-            max={100}
-            step={1}
-            value={Math.round(effectiveVolume * 100)}
-            onChange={(e) => onVolumeInput(Number(e.target.value) / 100)}
-            className="chanquina-volume relative z-10 w-full cursor-pointer appearance-none bg-transparent"
-            aria-label="Nivel de volumen"
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-valuenow={Math.round(effectiveVolume * 100)}
-          />
-        </div>
+        <VolumeSlider
+          value={volume}
+          onChange={onVolumeInput}
+          trackClassName="bg-[#5B1FA6]/15"
+          fillClassName="bg-gradient-to-r from-[#5B1FA6] to-[#00D1FF]"
+          thumbClassName="border-[#5B1FA6] bg-[#00D1FF]"
+        />
 
         <span className="w-10 shrink-0 text-right text-xs font-semibold tabular-nums text-[#5B1FA6]">
           {Math.round(effectiveVolume * 100)}%
